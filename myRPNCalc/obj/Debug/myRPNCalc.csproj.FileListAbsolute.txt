@@ -1,0 +1,9 @@
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\bin\Debug\myRPNCalc.exe.config
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\bin\Debug\myRPNCalc.exe
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\bin\Debug\myRPNCalc.pdb
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.csprojResolveAssemblyReference.cache
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.Form1.resources
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.Properties.Resources.resources
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.csproj.GenerateResource.Cache
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.exe
+c:\users\jcocklin\documents\visual studio 2017\Projects\myRPNCalc\myRPNCalc\obj\Debug\myRPNCalc.pdb
