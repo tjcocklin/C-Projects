@@ -1,2 +1,1 @@
-Project contains my solution to the Weekly Challenge: Generics in C#
-hosted by IAmTimCorey.
+Project contains my console app solution to the Weekly Challenge: Generics in C# hosted by IAmTimCorey.
