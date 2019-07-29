@@ -116,31 +116,47 @@ namespace PetStoreUI.Models
 
         //Insert statement
 
+
         public void Insert(string columns, string values)
         {
-            string query = $"INSERT INTO {Table} ({columns}) VALUES ({values})";
-                                   
+            string query1 = $"set session sql_mode = 'NO_BACKSLASH_ESCAPES';";
+            string query2 = $"INSERT INTO {Table} ({columns}) VALUES ({values})";
+
 
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                 MySqlCommand cmd = new MySqlCommand($"{query1} {query2}", connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("New Pet Added!");
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.Message);
 
-                //close connection
-                this.CloseConnection();
+                }
+                finally
+                {
+                    //close connection
+                    this.CloseConnection();
+                }
             }
         }
-               
+                                    
+    
 
         //Select statement
 
         public List<string>[] SelectAll()
         {
-            string query = $"SELECT * FROM {Table}";
+            string query1 = $"set session sql_mode = 'NO_BACKSLASH_ESCAPES';";
+            string query2 = $"SELECT * FROM {Table}";
 
 
             // List<string> list = new List<string>();
@@ -153,39 +169,39 @@ namespace PetStoreUI.Models
             result[3] = new List<string>(); //id
             result[4] = new List<string>(); //description
             result[5] = new List<string>(); //picture
-
-
-
+                       
 
             //Open connection
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                 MySqlCommand cmd = new MySqlCommand( $"{query1} {query2}", connection);
+
+                
                 //Create a data reader and Execute the command
-                MySqlDataReader dataReader = cmd.ExecuteReader();
+                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
-                //Read the data and store them in the list
-                while (dataReader.Read())
-                {
-                    result[0].Add($"{dataReader["name"]}");
-                    result[1].Add($"{dataReader["animaltype"]}");
-                    result[2].Add($"{dataReader["price"]}");
-                    result[3].Add($"{dataReader["id"]}");
-                    result[4].Add($"{dataReader["description"]}");
-                    result[5].Add($"{dataReader["picture"]}");
-                                        
-                }
+                 //Read the data and store them in the list
+                 while (dataReader.Read())
+                 {
+                        result[0].Add($"{dataReader["name"]}");
+                        result[1].Add($"{dataReader["animaltype"]}");
+                        result[2].Add($"{dataReader["price"]}");
+                        result[3].Add($"{dataReader["id"]}");
+                        result[4].Add($"{dataReader["description"]}");
+                        result[5].Add($"{dataReader["picture"]}");
 
-                //close Data Reader
-                dataReader.Close();
+                 }
 
+                 //close Data Reader
+                 dataReader.Close();
+                 
                 //close Connection
-                this.CloseConnection();
+                 this.CloseConnection();
 
-                //return list to be displayed
-                return result;
-            }
+              //return list to be displayed
+              return result;
+             }
             else
             {
                 return result;

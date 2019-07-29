@@ -12,6 +12,8 @@ namespace PetStoreUI.ViewModels
 {
     public class UserControlAddPetViewModel :Conductor<object>
     {
+
+        //properties
         private string _name;
         public string Name
         {
@@ -131,6 +133,7 @@ namespace PetStoreUI.ViewModels
 
         private DBConnect Connection;
 
+        //Constructor
         public UserControlAddPetViewModel(DBConnect db)
         {
             Connection = db;
@@ -138,7 +141,12 @@ namespace PetStoreUI.ViewModels
 
         }
 
-        public void petImageButton()
+        //Methods
+
+        /// <summary>
+        /// PetImageButton-Allows the user to add a jpg or png of a pet.
+        /// </summary>
+        public void PetImageButton()
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.DefaultExt = ".png";
@@ -149,17 +157,29 @@ namespace PetStoreUI.ViewModels
             {
                 Picture = dialog.FileName;
             }
+
+            if (!string.IsNullOrEmpty(dialog.FileName))
+            {
+                MessageBox.Show($"Adding {dialog.FileName}");
+            }
         }
 
+        /// <summary>
+        /// ClearButton-Clears the gui
+        /// </summary>
         public void ClearButton()
         {
             Name = "";
             AnimalType = "";
-            Price = "";
-            Id = "";
+            Price = "0";
+            Id = "0";
             Description = "";
             Picture = $"/Images/RainbowPawPrint.png";
         }
+
+        /// <summary>
+        /// FillAnimalRecord-Creates a new animal Object to be added to the database.
+        /// </summary>
         public void FillAnimalRecord() 
         {
             newPet.Name = Name;
@@ -169,6 +189,10 @@ namespace PetStoreUI.ViewModels
             newPet.Description = Description;   
             newPet.Picture = Picture;
         }
+
+        /// <summary>
+        /// SaveButton-Saves the input to the Database 
+        /// </summary>
         public void SaveButton()
         {
             //gather the Properties and put them in the object
@@ -189,11 +213,10 @@ namespace PetStoreUI.ViewModels
                 string values = $"'{newPet.Name}', '{newPet.AnimalType}', " +
                     $"{newPet.Price}, {newPet.Id}, '{newPet.Description}', " +
                     $"'{newPet.Picture}'";
-                                //$" {newPet.Price}, {newPet.Id}, {newPet.Description}, " +
-                                //$"{newPet.Picture}";
+                                
 
                 Connection.Insert(columns, values) ;
-                MessageBox.Show("New Pet Added!");
+                
             }
             catch (Exception x)
             {

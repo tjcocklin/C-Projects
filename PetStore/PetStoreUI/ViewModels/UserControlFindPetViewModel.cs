@@ -59,6 +59,17 @@ namespace PetStoreUI.ViewModels
             }
         }
 
+        private string _petImage;
+
+        public string PetImage
+        {
+            get { return _petImage; }
+            set
+            {
+                _petImage = value;
+                NotifyOfPropertyChange(() => PetImage);
+            }
+        }
 
         //Constructors
 
@@ -119,7 +130,9 @@ namespace PetStoreUI.ViewModels
                     Picture =results[5][i]
                     
                 });
-                
+                //PetImage = results[5][i];
+                //Console.WriteLine("\n\n");
+                //Console.WriteLine(PetImage);
             }
             
             
