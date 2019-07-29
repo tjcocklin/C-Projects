@@ -1,0 +1,110 @@
+﻿<Window x:Class="PetStoreUI.Views.WindowLoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PetStoreUI.Views"
+             mc:Ignorable="d" Background="Gray"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- Row 1 -->
+        <Label x:Name="Title" Grid.Row="1" Grid.Column="3" 
+               Content="Login Page" FontSize="24" FontWeight="Bold"
+               HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+
+        <!-- Row 2 -->
+        <Label x:Name="UserLabel" Grid.Row="2" Grid.Column="2" 
+               Content="UserName:" FontSize="18" FontWeight="Bold"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
+
+        <TextBox x:Name="UserNameTextBox" Grid.Row="2" Grid.Column="3"
+                 Text="{Binding Path=User, Mode=TwoWay}" 
+                 FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
+
+
+        <!-- Row 3 -->
+        <Label x:Name="PasswordLabel" Grid.Row="3" Grid.Column="2" 
+               Content="PassWord:" FontSize="18" FontWeight="Bold"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
+
+                  
+        
+        <TextBox x:Name="PasswordTextBox" Grid.Row="3" Grid.Column="3"
+                 Text="{Binding Path=PassWord, Mode=TwoWay }"
+                 FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
+        
+         
+        <!-- Row 4 -->
+        <Label x:Name="ServerLabel" Grid.Row="4" Grid.Column="2" 
+               Content="Server:" FontSize="18" FontWeight="Bold"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
+
+        <TextBox x:Name="ServerTextBox" Grid.Row="4" Grid.Column="3"
+                 Text="{Binding Path= Server, Mode=TwoWay}"
+                 FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
+
+
+        <!-- Row 5 -->
+        <Label x:Name="DatabaseLabel" Grid.Row="5" Grid.Column="2" 
+               Content="Database:" FontSize="18" FontWeight="Bold"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
+
+        <TextBox x:Name="DatabaseTextBox" Grid.Row="5" Grid.Column="3"
+                 Text="{Binding Path=DataBase, Mode=TwoWay}"
+                 FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
+
+        <Button x:Name="ClearButton" Grid.Row="5" Grid.Column="5"
+                Content="Clear All" VerticalAlignment="Center"
+                HorizontalAlignment="Center" MinHeight="50" 
+                MinWidth="100" FontWeight="Bold" Cursor="Hand" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <!-- Row 6 -->
+        <Label x:Name="TableLabel" Grid.Row="6" Grid.Column="2" 
+               Content="Table:" FontSize="18" FontWeight="Bold"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
+
+        <TextBox x:Name="TableTextBox" Grid.Row="6" Grid.Column="3"
+                 Text="{Binding Path=Table, Mode=TwoWay}"
+                 FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
+
+        <Button x:Name="LoginButton" Grid.Row="6" Grid.Column="5"
+                Content="Login In" VerticalAlignment="Center"
+                HorizontalAlignment="Center" MinHeight="50" 
+                MinWidth="100" FontWeight="Bold" Cursor="Hand" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <!--Content control -->
+        <ContentControl x:Name="ActiveItem" Grid.Row="0" Grid.Column="0"
+                        Grid.RowSpan="8" Grid.ColumnSpan="7"/>
+    </Grid>
+</Window>
