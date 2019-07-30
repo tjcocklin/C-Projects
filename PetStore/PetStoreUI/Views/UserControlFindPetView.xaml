@@ -4,8 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetStoreUI.Views"
-             mc:Ignorable="d" Background="Gray"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/PetStoreUI;component/Images/heart_withPaw.png"/>
+    </UserControl.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -36,61 +39,61 @@
         <Label x:Name="NameLabel" Grid.Row="1" Grid.Column="3"
                Content="Name:" VerticalAlignment="Center" Height="30" 
                FontSize="18" VerticalContentAlignment="Top" 
-               MaxWidth="180" HorizontalAlignment="Center" Margin="0,0,0,0" 
-               MinWidth="120" 
-               FontWeight="Bold" Foreground="#FF8ECFC9"/>
+               MaxWidth="180" HorizontalAlignment="Right" Margin="0,0,0,0" 
+               MinWidth="120" Foreground="DodgerBlue"
+               FontWeight="Bold" />
 
         <ComboBox x:Name= "AnimalList" Grid.Row="1" Grid.Column="4" Height="30"
                   SelectedItem="{Binding Path=SelectedAnimal, Mode=OneWayToSource}"
                   DisplayMemberPath="Name"
                   VerticalAlignment="Center" FontSize="20" />
-        
+
         <!-- Row 2 -->
         <Label x:Name="AnimalTypeLabel" Grid.Row="2" Grid.Column="3"
-               Content="AnimalType:" VerticalAlignment="Center" Height="30" 
+               Content="AnimalType:" VerticalAlignment="Center" Height="35" 
                FontSize="18" VerticalContentAlignment="Top" 
-               MaxWidth="180" HorizontalAlignment="Center" Margin="0,0,0,0" 
+               MaxWidth="180" HorizontalAlignment="Right" Margin="0,0,0,0" 
                MinWidth="120" 
-               FontWeight="Bold" Foreground="#FF8ECFC9"/>
+               FontWeight="Bold" Foreground="DodgerBlue"/>
 
         <TextBlock x:Name="SelectedAnimal_AnimalType" 
                    Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Height="30"
                    Background="Silver" FontSize="20"/>
-                 
-           
-        
+
+
+
         <!--Row 3 -->
         <Label x:Name="PriceLabel" Grid.Row="3" Grid.Column="3"
-               Content="Price:" VerticalAlignment="Center" Height="30" 
+               Content="Price:          $" VerticalAlignment="Center" Height="30" 
                FontSize="18" VerticalContentAlignment="Top" 
-               MaxWidth="180" HorizontalAlignment="Center" Margin="0,0,0,0" 
-               MinWidth="120" 
-               FontWeight="Bold" Foreground="#FF8ECFC9"/>
+               MaxWidth="180" HorizontalAlignment="Right" Margin="0,0,0,0" 
+               MinWidth="120" Foreground="DodgerBlue"
+               FontWeight="Bold" />
 
         <TextBlock x:Name="SelectedAnimal_Price" Grid.Row="3" Grid.Column="4"
                    VerticalAlignment="Center" Height="30"  Background="Silver" FontSize="20"/>
 
 
-       <!-- Row 4 -->
+        <!-- Row 4 -->
         <Label x:Name="IdLabel" Grid.Row="4" Grid.Column="3"
                Content="ID:" VerticalAlignment="Center" Height="30" 
                FontSize="18" VerticalContentAlignment="Top" 
-               MaxWidth="180" HorizontalAlignment="Center" Margin="0,0,0,0" 
-               MinWidth="120" 
-               FontWeight="Bold" Foreground="#FF8ECFC9"/>
+               MaxWidth="180" HorizontalAlignment="Right" Margin="0,0,0,0" 
+               MinWidth="120" Foreground="DodgerBlue"
+               FontWeight="Bold" />
 
         <TextBlock x:Name="SelectedAnimal_Id" Grid.Row="4" Grid.Column="4"
                    VerticalAlignment="Center" Height="30"  Background="silver" FontSize="20"/>
-        
+
         <!-- Row 5-->
-        
+
         <!--Row 6-->
         <Label x:Name="DescriptionLabel" Grid.Row="6" Grid.Column="1"
-               Content="Description:" VerticalAlignment="Top" Height="30" 
+               Content="Description:" VerticalAlignment="Top" Height="35" 
                FontSize="18" VerticalContentAlignment="Top" 
                MaxWidth="180" HorizontalAlignment="Right" Margin="0,0,0,0" 
-               MinWidth="120" 
-               FontWeight="Bold" Foreground="#FF8ECFC9"/>
+               MinWidth="120" Foreground="DodgerBlue"
+               FontWeight="Bold" Background="#00000000"/>
 
         <TextBlock x:Name="SelectedAnimal_Description" Grid.Row="6" Grid.Column="2"
                    Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top"

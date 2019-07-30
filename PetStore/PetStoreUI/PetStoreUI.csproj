@@ -156,5 +156,17 @@
     <Resource Include="Images\maine-coon-cat.png" />
     <Resource Include="Images\Ragdoll-cat-on-blue-backdrop.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Reception.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\heart_paw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\heart_withPaw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell_hop2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

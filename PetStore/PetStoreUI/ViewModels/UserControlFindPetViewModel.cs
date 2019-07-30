@@ -59,8 +59,8 @@ namespace PetStoreUI.ViewModels
             }
         }
 
-        private string _petImage;
 
+        private string _petImage;
         public string PetImage
         {
             get { return _petImage; }
@@ -84,8 +84,11 @@ namespace PetStoreUI.ViewModels
             
         }
 
-        //methods
+        //Methods
 
+         /// <summary>
+         /// LoadSampleData- Loads sample data for debug purposes.
+         /// </summary>
         private void LoadSampleData()
         {
             AnimalList.Add(new AnimalRecord
@@ -108,6 +111,9 @@ namespace PetStoreUI.ViewModels
             });
         }
 
+        /// <summary>
+        /// LoadDBData- Loads in the data from the database and table given in the login
+        /// </summary>
         private void LoadDBData()
         {
             List<string>[] results = Connection.SelectAll();
@@ -130,9 +136,7 @@ namespace PetStoreUI.ViewModels
                     Picture =results[5][i]
                     
                 });
-                //PetImage = results[5][i];
-                //Console.WriteLine("\n\n");
-                //Console.WriteLine(PetImage);
+               
             }
             
             

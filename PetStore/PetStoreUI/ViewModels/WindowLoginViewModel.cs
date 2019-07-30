@@ -12,8 +12,8 @@ namespace PetStoreUI.ViewModels
 {
     public class WindowLoginViewModel : Conductor<object>
     {
-        
-
+                            
+        //Properties
 
         private string _user;
         public string User
@@ -93,11 +93,16 @@ namespace PetStoreUI.ViewModels
             }
         }
 
-
+        //Constructor
         public WindowLoginViewModel()
         {
         }
+        
+        //Methods
 
+         /// <summary>
+         /// Clear Button- allows the user to clear out all fields.
+         /// </summary>
         public void ClearButton()
         {
             User = "";
@@ -105,18 +110,29 @@ namespace PetStoreUI.ViewModels
             Server = "";
             DataBase = "";
             Table = "";
-            //MessageBox.Show("Clear Button clicked.");
-
+           
         }
-
-
+        
+        /// <summary>
+        /// Readies the Database connection and takes the User to the welcome screen.
+        /// </summary>
         public void LoginButton()
         {
-             Connect = new DBConnect(Server, DataBase, Table, User, PassWord );
+                                   
+            if(!string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(PassWord) &&
+                !string.IsNullOrEmpty(Server) && !string.IsNullOrEmpty(DataBase) &&
+                !string.IsNullOrEmpty(Table))
+            {
 
-            //ActivateItem(new ShellViewModel(Connect));
-            ActivateItem(new UserControlWelcomeViewModel(Connect));
-            //MessageBox.Show("Login clicked");
+                Connect = new DBConnect(Server, DataBase, Table, User, PassWord);
+                ActivateItem(new UserControlWelcomeViewModel(Connect));
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill out all the fields first.");
+            }
+                                   
 
         }
     }

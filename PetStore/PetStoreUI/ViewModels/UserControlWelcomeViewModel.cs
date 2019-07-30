@@ -10,8 +10,10 @@ namespace PetStoreUI.ViewModels
 {
     class UserControlWelcomeViewModel : Conductor<object>
     {
-        private DBConnect _connection;
 
+        //Properties
+
+        private DBConnect _connection;
         public DBConnect Connection
         {
             get
@@ -25,10 +27,10 @@ namespace PetStoreUI.ViewModels
             }
         }
 
+        //Constructors
 
         public UserControlWelcomeViewModel()
         {
-            //Connection = null;
         }
 
         public UserControlWelcomeViewModel(DBConnect db)
@@ -36,12 +38,19 @@ namespace PetStoreUI.ViewModels
             Connection = db;
         }
 
+        //Methods
+
+        /// <summary>
+        /// FindPetButton- changes the user control to FindPetView
+        /// </summary>
         public void FindPetButton()
         {
             ActivateItem(new UserControlFindPetViewModel(Connection));
         }
 
-
+        /// <summary>
+        /// AddPetButton- changes the user control to AddPetView
+        /// </summary>
         public void AddPetButton()
         {
             ActivateItem(new UserControlAddPetViewModel(Connection));

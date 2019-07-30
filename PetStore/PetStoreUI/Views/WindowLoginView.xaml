@@ -4,8 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetStoreUI.Views"
-             mc:Ignorable="d" Background="Gray"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/PetStoreUI;component/Images/Reception.jpg"/>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -30,7 +33,7 @@
         </Grid.RowDefinitions>
 
         <!-- Row 1 -->
-        <Label x:Name="Title" Grid.Row="1" Grid.Column="3" 
+        <Label x:Name="PageTitle" Grid.Row="1" Grid.Column="3" 
                Content="Login Page" FontSize="24" FontWeight="Bold"
                HorizontalAlignment="Center" VerticalAlignment="Center" />
 
@@ -50,13 +53,13 @@
                Content="PassWord:" FontSize="18" FontWeight="Bold"
                HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" />
 
-                  
-        
+
+
         <TextBox x:Name="PasswordTextBox" Grid.Row="3" Grid.Column="3"
                  Text="{Binding Path=PassWord, Mode=TwoWay }"
                  FontSize="18" VerticalAlignment="Center" MinWidth="2"/>
-        
-         
+
+
         <!-- Row 4 -->
         <Label x:Name="ServerLabel" Grid.Row="4" Grid.Column="2" 
                Content="Server:" FontSize="18" FontWeight="Bold"
